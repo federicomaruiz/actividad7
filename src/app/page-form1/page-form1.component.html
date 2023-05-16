@@ -1,17 +1,21 @@
-<h1>{{title}}</h1>
-<form>
+<div class="div">
+  <h1>{{title}}</h1>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input #nombre type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label class="form-label">{{varNombre}}</label>
+      <input #nombre id="campoName" class="form-control">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input #apellido type="password" class="form-control" id="exampleInputPassword1">
+      <label class="form-label">{{varApellido}}</label>
+      <input #apellido class="form-control">
     </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="mb-3">
+      <label class="form-label">{{varTelefono}}</label>
+      <input #telefono class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <button (click)="addUser(nombre.value,apellido.value,telefono.value)" type="text" class="btn btn-primary">Enviar</button>
+  <h3 class="mb-10">{{usuarios}}</h3>
+  <ul >
+    <li class="mb-3" *ngFor="let dato of myDatos"> {{dato.nombre}}  {{dato.apellido}}, Telefono : {{dato.telefono}} <button (click)="eliminar(dato.id)" type="button"
+      class="btn btn-danger me-2">Eliminar</button></li>
+  </ul>
+</div>

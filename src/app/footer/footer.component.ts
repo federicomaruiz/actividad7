@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  footer= "Direccion Avenida Carlos Paz 1354, cp 1243, Tel: 622954908"
 }

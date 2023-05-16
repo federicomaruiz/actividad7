@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageForm1Component } from './page-form1/page-form1.component';
 import { PageForm2Component } from './page-form2/page-form2.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavegacionComponent,
     FooterComponent,
     PageForm1Component,
-    PageForm2Component
+    PageForm2Component,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

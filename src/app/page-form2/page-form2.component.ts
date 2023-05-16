@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -13,7 +12,7 @@ export class PageForm2Component {
 
   identificador: number = 1;
   comprobador: number = 0;
-  title = "Formulario de inscripción"
+  title = "Formulario reactivo"
   varNombre  = "Nombre"
   varApellido = "Apellido"
   varDomicilio = "Domicilio"
