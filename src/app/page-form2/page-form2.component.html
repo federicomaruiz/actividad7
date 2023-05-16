@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<form class="container col-xs col-sm input-group mb-3" [formGroup]="datosForm">
+  <div class="mb-3 col-3">
+    <label for="exampleInputEmail1" class="form-label">{{varNombre}}</label>
+    <input #nombre formControlName="nombre" type="text" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3 col-3">
+    <label for="exampleInputPassword1" class="form-label">{{varApellido}}</label>
+    <input #apellido formControlName="apellido" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 col-3">
+    <label for="exampleInputEmail1" class="form-label">{{varDomicilio}}</label>
+    <input #domicilio formControlName="domicilio" type="text" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3 col-3">
+    <label for="exampleInputEmail1" class="form-label">{{varEdad}}</label>
+    <input #edad formControlName="edad" type="number" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp" min="18" max="65">
+  </div>
+  <button (click)="sendData()" type="text" class="btn btn-primary mb-5 ">{{datos}}</button>
+</form>
+<h3>{{lista}}</h3>
+<div *ngIf="isError" class="alert alert-danger" role="alert">
+  Tienes que rellenar todos los campos
+</div>
+<div *ngIf="userExiste" class="alert alert-danger" role="alert">
+  Ese usuario ya existe prueba otro nombre o apellido
+</div>
+<ul>
+  <li class="mb-3" *ngFor="let dato of arrDatos">{{dato.id}} - {{dato.nombre}} {{dato.apellido}} {{dato.edad}} años -
+    {{dato.domicilio}}  <button (click)="modificar(dato.id,dato.nombre,dato.apellido,dato.domicilio,dato.edad)" type="button" class="btn btn-success me-2">Modificar</button>   <button (click)="eliminar(dato.id)"type="button" class="btn btn-danger me-2">Eliminar</button> <button (click)="actualizar(dato.id)" type="button" class="btn btn-info me-2">Actualizar</button></li>
+</ul>
